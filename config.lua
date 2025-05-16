@@ -1,19 +1,10 @@
 Config = {}
 
--- Control to start/stop interactions. Comment this out to disable the control.
-Config.InteractControl = `INPUT_GAME_MENU_TAB_LEFT_SECONDARY` -- Z
-
--- Interaction picker menu controls
-Config.MenuUpControl = `INPUT_GAME_MENU_UP`
-Config.MenuDownControl = `INPUT_GAME_MENU_DOWN`
-Config.MenuAcceptControl = `INPUT_GAME_MENU_ACCEPT`
-Config.MenuCancelControl = `INPUT_GAME_MENU_CANCEL`
-
--- Settings for the marker that appears on the currently selected object
+Config.Debug=false
+Config.InteractControl = `INPUT_GAME_MENU_DOWN`-- DOWN
 Config.MarkerType = 0x94FDAE17
 Config.MarkerColor = {254, 127, 156, 128}
 
--- Effects that may be applied when interacting with objects
 Config.Effects = {
 	["clean"] = function()
 		local ped = PlayerPedId()
@@ -22,6 +13,70 @@ Config.Effects = {
 		ClearPedBloodDamage(ped)
 	end
 }
+
+Config.Lang = {
+    InteractionMenuTitle   = "ETKİLEŞİMLER",            -- Menü başlığı
+    DefaultInteractionText = "Nesne ile etkileşime geç", -- Varsayılan açıklama
+    CancelLabel            = "Etkileşim İptal",         -- İptal butonu metni
+    CancelDesc             = "Menüyü kapat",            -- İptal butonu açıklaması
+    NoInteractionLabel     = "Etkileşim bulunamadı",     -- Yakında etkileşim yok
+    NoInteractionDesc      = "Yakınlarda etkileşim yok", -- Açıklaması
+
+    -- Bilinen senaryo/animasyon anahtarları için açık çeviriler
+    Labels = {
+        -- Piyano
+        ["PROP_HUMAN_PIANO"]               = "Piyano Çal",
+        ["PROP_HUMAN_ABIGAIL_PIANO"]      = "Piyano Çal (Kadın)",
+        -- Sandalye/Bank/İçme vs.
+        ["PROP_HUMAN_SEAT_CHAIR_DRINKING"]   = "Otur ve İç",
+        ["PROP_HUMAN_SEAT_BENCH_HARMONICA"] = "Mızıkayla Otur",
+        ["PROP_HUMAN_SEAT_CHAIR_FAN"]        = "Yelpaze Kullan",
+        -- Banyo efekt anahtarı
+        ["clean"] = "Banyo Yap",
+
+        -- BathingAnimations etiketleri
+        ["Bath"]                       = "Banyo",
+        ["Bath: Scrub left arm"]       = "Banyo: Sol kolu fırçala",
+        ["Bath: Scrub right arm"]      = "Banyo: Sağ kolu fırçala",
+        ["Bath: Scrub left leg"]       = "Banyo: Sol bacağı fırçala",
+        ["Bath: Scrub right leg"]      = "Banyo: Sağ bacağı fırçala"
+    }
+	
+}
+Config.Lang.SegmentMap = {
+    -- Yön
+    LEFT  = "Sol",
+    RIGHT = "Sağ",
+    FRONT = "Ön",
+    BACK  = "Arka",
+    LFT = "Sol",
+	 RGT = "Sağ",
+    -- Yer / oturulan
+    CHAIR  = "Sandalyede",
+    BENCH  = "Bankta",
+    TABLE  = "Masada",
+    PORCH  = "Veranda",
+    CAMP   = "Kampta",
+    FIRE   = "Ateş Başında",
+
+    -- Eylem
+    DRINKING   = "İçki İç",
+    SMOKING    = "Sigara İç",
+    WHITTLE    = "Oy",
+    KNIFE_BADASS = "Bıçak Oyunu",
+    GUITAR     = "Gitar Çal",
+    BANJO      = "Banjo Çal",
+    MANDOLIN   = "Mandolin Çal",
+    CONCERTINA = "Konzertina Çal",
+    HARMONICA  = "Mızıka Çal",
+	CLEAN="Temizle",
+	KNIFE="Bıçak",
+	BADASS="Oyunu",
+	CIGAR="Puro",
+	RIFLE="Tüfek",
+	SADDLE="Eyer"
+}
+
 
 -- List of interactable types of objects.
 Config.Interactions = {
