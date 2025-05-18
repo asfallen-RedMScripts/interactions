@@ -1,15 +1,20 @@
-# RedM interactions
+# RedM Interactions
 
-Configurable interactions with objects or points on the map.
 
-# Requirements
 
+Modified RSG-compatible version of the original [kibook/redm-interactions](https://github.com/kibook/redm-interactions) with menu system integration.
+
+## Key Modifications
+- Integrated with RSG Core framework
+- Replaced NUI interface with rsg-menubase menu system
+- Optimized for RSG ecosystem compatibility
+
+## Requirements
+- [rsg-menubase](https://github.com/Rexshack-RedM/rsg-menubase)
 - [uiprompt](https://github.com/kibook/redm-uiprompt)
 
-# Install
+## Installation
 
-1. Create a folder named `interactions` in your resources folder.
-
-2. Copy the files in this repository to that folder.
-
-3. Add `start interactions` to `server.cfg`.
+1. Clone the modified version:
+   ```bash
+   git clone https://https://github.com/asfallen-RedMScripts/interactions
